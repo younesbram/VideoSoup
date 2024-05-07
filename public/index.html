@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Processor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Younes's Video Processing Tool</h1>
+        <p>Welcome to a cutting-edge video processing platform that utilizes FFmpeg's power for unmatched efficiency and quality. Customize the video settings to your preference.</p>
+        <form id="videoForm">
+            <input type="text" id="videoUrl1" placeholder="Enter URL for the top video" required>
+            <input type="text" id="videoUrl2" placeholder="Enter URL for the bottom video" required>
+            
+            <label>Width: <input type="number" id="width" value="720" required></label>
+            <label>Height: <input type="number" id="height" value="1280" required></label>
+            
+            <label>Speed for Top Video:
+                <input type="range" id="speed1" min="0.5" max="2.0" step="0.1" value="1.0">
+                <span id="speed1Display">1.0x</span>
+            </label>
+            <label>Mute Top Video: <input type="checkbox" id="mute1"></label>
+            
+            <label>Speed for Bottom Video:
+                <input type="range" id="speed2" min="0.5" max="2.0" step="0.1" value="1.0">
+                <span id="speed2Display">1.0x</span>
+            </label>
+            <label>Mute Bottom Video: <input type="checkbox" id="mute2"></label>
+            
+            <label>Video Length Adjustment:
+                <input type="radio" id="cut" name="lengthAdjust" value="cut" checked> Cut to shorter video's length
+                <input type="radio" id="loop" name="lengthAdjust" value="loop"> Loop shorter video
+            </label>
+            
+            <button type="submit">Process Videos</button>
+            <div id="loading" style="display:none;">
+                Processing... <span id="progress">0</span>%
+            </div>
+        </form>
+        <footer>
+            <p>Discover more projects on <a href="https://github.com/younesbram" target="_blank">GitHub</a>. Follow me on <a href="https://twitter.com/didntdrinkwater" target="_blank">Twitter</a> to connect and possibly collaborate!</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
